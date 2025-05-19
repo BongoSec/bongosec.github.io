@@ -20,14 +20,31 @@ jobs:
       - name: Build CentOS 5 i386 Builder
         working-directory: packages/utils/centos-5-i386-build
         run: |
-          chmod +x build.sh
-          ./build.sh
+          # Create output directory
+          mkdir -p output
           
-      - name: Check for build artifacts
-        run: |
-          if [ -f "packages/utils/centos-5-i386-build/centos-5-i386.tar.gz" ]; then
-            echo "Build artifact found"
-          else
-            echo "Build artifact not found"
+          # Build the Docker image with detailed output
+          echo "Building Docker image..."
+          docker build --progress=plain -t centos5-i386-builder . || {
+            echo "Docker build failed"
             exit 1
-          fi 
+          }
+          
+          # Run the container with error handling
+          echo "Running container..."
+          docker run --rm -v $(pwd)/output:/output centos5-i386-builder /root/prepare.sh || {
+            echo "Container execution failed"
+            exit 1
+          }
+          
+          # Verify the output file exists
+          if [ ! -f "output/centos-5-i386.tar.gz" ]; then
+            echo "Error: Build artifact not found"
+            exit 1
+          fi
+          
+          # Move the file to the correct location
+          mv output/centos-5-i386.tar.gz .
+          rm -rf output
+          
+          echo "Build completed successfully!" 

@@ -1,5 +1,9 @@
 FROM centos:5
 
+# Update yum repositories to use vault archives
+RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/*.repo && \
+    sed -i 's|#baseurl=http://mirror.centos.org/centos/$releasever|baseurl=http://vault.centos.org/5.11|g' /etc/yum.repos.d/*.repo
+
 # Install required packages
 RUN yum -y update && \
     yum -y install \
