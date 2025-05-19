@@ -1,0 +1,10 @@
+{
+  "name": "pacman",
+  "version": "5.2.2",
+  "author": "Judd Vinet",
+  "license": "GNU Public License version 2 (copyleft)",
+  "description": "A library-based package manager with dependency support.",
+  "homepage": "https://www.archlinux.org/pacman/",
+  "sources": ["libraries/sources/pacman-5.2.2.tar.gz"],
+  "dependencies": ["libarchive", "openssl", "curl"]
+}

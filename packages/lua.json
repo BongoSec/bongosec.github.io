@@ -1,0 +1,10 @@
+{
+  "name": "Lua",
+  "version": "5.3.6",
+  "author": "PUC-Rio",
+  "license": "MIT License",
+  "description": "A powerful, efficient, lightweight, embeddable scripting language.",
+  "homepage": "https://www.lua.org/",
+  "sources": ["libraries/sources/lua-5.3.6.tar.gz"],
+  "dependencies": []
+}

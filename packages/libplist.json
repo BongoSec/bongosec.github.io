@@ -1,0 +1,10 @@
+{
+  "name": "libplist",
+  "version": "2.2.0",
+  "author": "Aaron Burghardt et al.",
+  "license": "GNU Lesser General Public License version 2.1",
+  "description": "A library to handle Apple Property List format in binary or XML.",
+  "homepage": "https://www.libimobiledevice.org/",
+  "sources": ["libraries/sources/libplist-2.2.0.tar.gz"],
+  "dependencies": []
+}

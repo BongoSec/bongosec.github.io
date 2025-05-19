@@ -1,0 +1,10 @@
+{
+  "name": "libdb",
+  "version": "18.1.40",
+  "author": "Oracle Corporation",
+  "license": "Affero GPL v3",
+  "description": "Berkeley DB is a family of embedded key-value database libraries providing scalable high-performance data management services to applications.",
+  "homepage": "https://www.oracle.com/database/technologies/related/berkeleydb.html",
+  "sources": ["libraries/sources/db-18.1.40.tar.gz"],
+  "dependencies": []
+}

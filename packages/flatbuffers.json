@@ -1,0 +1,10 @@
+{
+  "name": "Flatbuffers",
+  "version": "23.5.26",
+  "author": "Google Inc.",
+  "license": "Apache 2.0 License",
+  "description": "Memory efficient serialization library that allows reading data without parsing/unpacking.",
+  "homepage": "https://google.github.io/flatbuffers/",
+  "sources": ["libraries/sources/flatbuffers-23.5.26.tar.gz"],
+  "dependencies": []
+}

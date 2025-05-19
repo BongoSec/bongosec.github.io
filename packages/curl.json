@@ -1,0 +1,10 @@
+{
+  "name": "cURL",
+  "version": "8.10.0",
+  "author": "Daniel Stenberg",
+  "license": "MIT License",
+  "description": "A command-line tool and library for transferring data with URLs.",
+  "homepage": "https://curl.se/",
+  "sources": ["libraries/sources/curl-8.10.0.tar.gz"],
+  "dependencies": []
+}

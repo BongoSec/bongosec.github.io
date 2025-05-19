@@ -1,0 +1,9 @@
+{
+  "name": "nlohmann-json",
+  "version": "3.11.2",
+  "author": "Niels Lohmann",
+  "license": "MIT License",
+  "description": "JSON for Modern C++.",
+  "homepage": "https://github.com/nlohmann/json",
+  "dependencies": []
+}

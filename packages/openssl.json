@@ -1,0 +1,9 @@
+{
+  "name": "OpenSSL",
+  "version": "3.0.12",
+  "author": "OpenSSL Software Foundation",
+  "license": "Apache 2.0 License",
+  "description": "A robust, commercial-grade, and full-featured toolkit for the Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols.",
+  "homepage": "https://www.openssl.org/",
+  "dependencies": []
+}

@@ -1,0 +1,9 @@
+{
+  "name": "rpm",
+  "version": "4.18.2",
+  "author": "Marc Ewing & Erik Troan",
+  "license": "GNU Public License version 2 (copyleft)",
+  "description": "The RPM Package Manager.",
+  "homepage": "http://rpm.org/",
+  "dependencies": ["popt", "libdb", "libarchive", "libpcre2"]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "libYAML",
+  "version": "0.1.7",
+  "author": "Kirill Simonov",
+  "license": "MIT License",
+  "description": "YAML 1.1 parser and emitter written in C.",
+  "homepage": "https://pyyaml.org/wiki/LibYAML",
+  "sources": ["libraries/sources/libyaml-0.1.7.tar.gz"],
+  "dependencies": []
+}

@@ -1,0 +1,10 @@
+{
+  "name": "msgpack",
+  "version": "3.1.1",
+  "author": "Sadayuki Furuhashi",
+  "license": "Boost Software License version 1.0",
+  "description": "An efficient binary serialization format that lets you exchange data among multiple languages like JSON.",
+  "homepage": "https://msgpack.org/",
+  "sources": ["libraries/sources/msgpack-3.1.1.tar.gz"],
+  "dependencies": []
+}

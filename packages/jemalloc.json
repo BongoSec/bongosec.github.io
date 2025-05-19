@@ -1,0 +1,10 @@
+{
+  "name": "jemalloc",
+  "version": "5.2.1",
+  "author": "Jason Evans",
+  "license": "2-Clause 'Simplified' BSD License",
+  "description": "General purpose malloc(3) implementation that emphasizes fragmentation avoidance and scalable concurrency support.",
+  "homepage": "http://jemalloc.net/",
+  "sources": ["libraries/sources/jemalloc-5.2.1.tar.bz2"],
+  "dependencies": []
+}

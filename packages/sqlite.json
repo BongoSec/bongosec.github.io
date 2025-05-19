@@ -1,0 +1,10 @@
+{
+  "name": "SQLite",
+  "version": "3.45.0",
+  "author": "D. Richard Hipp",
+  "license": "Public Domain",
+  "description": "A C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine.",
+  "homepage": "https://www.sqlite.org/",
+  "sources": ["libraries/sources/sqlite-3.45.0.tar.gz"],
+  "dependencies": []
+}

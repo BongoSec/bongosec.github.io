@@ -1,0 +1,10 @@
+{
+  "name": "RocksDB",
+  "version": "8.3.2",
+  "author": "Facebook Inc.",
+  "license": "Apache 2.0 License",
+  "description": "A high performance embedded database for key-value data.",
+  "homepage": "https://rocksdb.org/",
+  "sources": ["libraries/sources/rocksdb.tar.gz"],
+  "dependencies": ["gflags", "snappy", "lz4", "bzip2", "zlib"]
+}

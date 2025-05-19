@@ -1,0 +1,10 @@
+{
+  "name": "libpcre2",
+  "version": "10.42.0",
+  "author": "Philip Hazel",
+  "license": "BSD License",
+  "description": "Perl-compatible regular expression library, version 2.",
+  "homepage": "https://www.pcre.org/",
+  "sources": ["libraries/sources/pcre2-10.42.tar.gz"],
+  "dependencies": []
+}

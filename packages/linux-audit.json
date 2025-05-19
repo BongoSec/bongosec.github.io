@@ -1,0 +1,9 @@
+{
+  "name": "Linux Audit userspace",
+  "version": "2.8.4",
+  "author": "Rik Faith",
+  "license": "LGPL (copyleft)",
+  "description": "Userspace components of the Linux auditing system.",
+  "homepage": "https://people.redhat.com/sgrubb/audit/",
+  "dependencies": []
+}

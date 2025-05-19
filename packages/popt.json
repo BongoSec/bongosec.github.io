@@ -1,0 +1,9 @@
+{
+  "name": "popt",
+  "version": "1.16",
+  "author": "Jeff Johnson & Erik Troan",
+  "license": "MIT License",
+  "description": "A C library for parsing command line parameters.",
+  "homepage": "https://github.com/rpm-software-management/popt",
+  "dependencies": []
+}

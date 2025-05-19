@@ -1,0 +1,9 @@
+{
+  "name": "liblzma",
+  "version": "5.4.2",
+  "author": "Lasse Collin, Jia Tan et al.",
+  "license": "GNU Public License version 3",
+  "description": "A compression library with an API similar to that of zlib.",
+  "homepage": "https://tukaani.org/xz/",
+  "dependencies": []
+}

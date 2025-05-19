@@ -1,0 +1,10 @@
+{
+  "name": "libffi",
+  "version": "3.2.1",
+  "author": "Anthony Green",
+  "license": "MIT License",
+  "description": "A portable foreign-function interface library.",
+  "homepage": "https://sourceware.org/libffi/",
+  "sources": ["libraries/sources/libffi-3.2.1.tar.gz"],
+  "dependencies": []
+}

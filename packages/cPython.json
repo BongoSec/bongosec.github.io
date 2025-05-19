@@ -1,0 +1,10 @@
+{
+  "name": "cPython",
+  "version": "3.10.16",
+  "author": "Guido van Rossum",
+  "license": "Python Software Foundation License version 2",
+  "description": "The default and most widely used implementation of the Python programming language.",
+  "homepage": "https://www.python.org/",
+  "sources": ["libraries/sources/Python-3.10.16.tar.xz"],
+  "dependencies": []
+}

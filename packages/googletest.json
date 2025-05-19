@@ -1,0 +1,10 @@
+{
+  "name": "GoogleTest",
+  "version": "1.11.0",
+  "author": "Google Inc.",
+  "license": "3-Clause 'New' BSD License",
+  "description": "Google's C++ testing and mocking framework.",
+  "homepage": "https://github.com/google/googletest",
+  "sources": ["libraries/sources/googletest-1.11.0.tar.gz"],
+  "dependencies": []
+}
