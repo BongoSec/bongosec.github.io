@@ -3,8 +3,15 @@
   "version": "3.7.2",
   "author": "Tim Kientzle",
   "license": "3-Clause 'New' BSD License",
-  "description": "Multi-format archive and compression library.",
+  "description": "Multi-format archive and compression library supporting various archive formats including tar, cpio, pax, zip, xar, and more.",
   "homepage": "https://www.libarchive.org/",
   "sources": ["libraries/sources/libarchive-3.7.2.tar.gz"],
-  "dependencies": ["zlib", "bzip2", "liblzma"]
+  "dependencies": ["zlib", "bzip2", "liblzma"],
+  "vulnerabilities": [],
+  "security_notes": [
+    "Ensure proper input validation when processing untrusted archive files.",
+    "Keep the library updated to the latest version to mitigate known vulnerabilities."
+  ],
+  "last_updated": "2025-05-19",
+  "cve_list": []
 }
