@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Package Analysis - BongoSec</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        header {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            color: #3498db;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .package-card {
+            border: 1px solid #e1e4e8;
+            border-radius: 6px;
+            padding: 1.25rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .package-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .package-name {
+            font-size: 1.25rem;
+            margin: 0 0 0.5rem 0;
+            color: #0366d6;
+        }
+        .package-version {
+            display: inline-block;
+            background: #f1f8ff;
+            color: #0366d6;
+            font-size: 0.85rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 20px;
+            margin-bottom: 0.75rem;
+        }
+        .package-description {
+            color: #586069;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+        .package-meta {
+            font-size: 0.85rem;
+            color: #6a737d;
+            margin-bottom: 0.5rem;
+        }
+        .package-link {
+            color: #0366d6;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .package-link:hover {
+            text-decoration: underline;
+        }
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: #6a737d;
+        }
+        footer {
+            margin-top: 4rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #ecf0f1;
+            text-align: center;
+            color: #6a737d;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .packages-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/" class="back-link">← Back to Home</a>
+        <h1>Package Analysis</h1>
+        <p>Security analysis of various software packages and libraries.</p>
+    </header>
+
+    <main>
+        <div id="packages-container" class="loading">
+            Loading packages...
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 BongoSec. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                // Fetch all package files
+                const response = await fetch('https://api.github.com/repos/bongosec/bongosec.github.io/contents/packages');
+                const files = await response.json();
+                
+                // Filter for JSON files
+                const packageFiles = files.filter(file => file.name.endsWith('.json') && file.name !== 'index.json');
+                
+                // Load each package
+                const packages = await Promise.all(packageFiles.map(async (file) => {
+                    const res = await fetch(file.download_url);
+                    const pkg = await res.json();
+                    return {
+                        ...pkg,
+                        filename: file.name
+                    };
+                }));
+                
+                // Sort packages by name
+                packages.sort((a, b) => a.name.localeCompare(b.name));
+                
+                // Render packages
+                const container = document.getElementById('packages-container');
+                if (packages.length === 0) {
+                    container.innerHTML = '<p>No packages found.</p>';
+                    return;
+                }
+                
+                container.innerHTML = `
+                    <div class="packages-grid">
+                        ${packages.map(pkg => `
+                            <div class="package-card">
+                                <h2 class="package-name">${pkg.name}</h2>
+                                <span class="package-version">v${pkg.version}</span>
+                                <p class="package-description">${pkg.description || 'No description available.'}</p>
+                                <div class="package-meta">
+                                    <div><strong>Author:</strong> ${pkg.author || 'N/A'}</div>
+                                    <div><strong>License:</strong> ${pkg.license || 'N/A'}</div>
+                                </div>
+                                ${pkg.homepage ? `<a href="${pkg.homepage}" class="package-link" target="_blank" rel="noopener noreferrer">View Project →</a>` : ''}
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+                
+            } catch (error) {
+                console.error('Error loading packages:', error);
+                document.getElementById('packages-container').innerHTML = 
+                    '<p>Error loading packages. Please try again later.</p>';
+            }
+        });
+    </script>
+</body>
+</html>
