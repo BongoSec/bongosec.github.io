@@ -1,0 +1,32 @@
+name: Validate Package Files
+
+on:
+  push:
+    paths:
+      - 'packages/**/*.json'
+  pull_request:
+    paths:
+      - 'packages/**/*.json'
+
+jobs:
+  validate-json:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+          
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install jsonschema
+          
+      - name: Validate JSON files
+        run: |
+          for file in packages/**/*.json; do
+            echo "Validating $file"
+            python -c "import json; json.load(open('$file'))"
+          done 

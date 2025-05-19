@@ -1,0 +1,33 @@
+name: Build and Test Utils
+
+on:
+  push:
+    paths:
+      - 'packages/utils/**'
+  pull_request:
+    paths:
+      - 'packages/utils/**'
+
+jobs:
+  build-utils:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+        
+      - name: Build CentOS 5 i386 Builder
+        working-directory: packages/utils/centos-5-i386-build
+        run: |
+          chmod +x build.sh
+          ./build.sh
+          
+      - name: Check for build artifacts
+        run: |
+          if [ -f "packages/utils/centos-5-i386-build/centos-5-i386.tar.gz" ]; then
+            echo "Build artifact found"
+          else
+            echo "Build artifact not found"
+            exit 1
+          fi 
